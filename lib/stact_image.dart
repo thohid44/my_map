@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class StackImage extends StatefulWidget {
   const StackImage({super.key});
 
@@ -8,112 +7,133 @@ class StackImage extends StatefulWidget {
   State<StackImage> createState() => _StackImageState();
 }
 
-class _StackImageState extends State<StackImage>  {
-  bool opend = false; 
+class _StackImageState extends State<StackImage> {
+  bool opend = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey,
       appBar: AppBar(),
-      body:   Container(
-        margin: EdgeInsets.only(left: 10, top: 10, bottom: 10),
-        width: 200,
-        child: Card(
-          child: ListView(
-            children: [
-              
-              SizedBox(height: 20),
-            const  ExpansionTile(title: Text("Trip"), 
-              children:  [
-                ListTile(
-                  title: Text("Category 1"),
-                ),
-                  ListTile(
-                  title: Text("Category 1"),
-                )
-              ],
-              ), 
-         const     ExpansionTile(title: Text("Trip"), 
+      body: Column(
+        children: [
+          Container(
+            height: 220, 
+            decoration: BoxDecoration(
+              color: Colors.amber
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ListTile(
-                  title: Text("Category 1"),
-                ),
-                  ListTile(
-                  title: Text("Category 1"),
-                )
-              ],
-              )
-              ,
-              
-              ExpansionTile(title: Container(
-                height: 40,
-                child: Text("Task")), 
-              children: [
-                ListTile(
-                  title: Text("Post a Task"),
-                ),
-                  ListTile(
-                  title: Text("My Task"),
+                SizedBox(height: 10,), 
+                Center(
+                  child: Container(
+                    width: 300,
+                    child: Stack(clipBehavior: Clip.none, children: [
+                      Container(
+                        height: 100,
+                        decoration: BoxDecoration(color: Colors.white),
+                      ),
+                      Positioned(
+                          top: -25,
+                          left: 50,
+                          right: 50,
+                          child: Image.asset(
+                            "assets/about.png",
+                            height: 60,
+                            width: 60,
+                          )),
+                      Positioned(
+                          left: 50,
+                          top: 40,
+                          right: 50,
+                          child: Center(child: Text("How was the experience"))),
+                      Positioned(
+                          left: 50,
+                          top: 60,
+                          right: 50,
+                          child: Center(child: Text("How was the experience")))
+                    ]),
+          
+                  ),
                 ), 
-                 ListTile(
-                  title: Text("My Task Offers"),
-                ), 
-                ListTile(
-                  title: Text("My Task Ratings"),
-                )
-              ],
-              ), 
-              
-              ListTile(
-               
-                title: Text("Referral", style: TextStyle(
-                  color: Colors.black, 
-                ),),
-              ),
-               ListTile(
-               
-                title: Text("My Transactions", style: TextStyle(
-                  color: Colors.black, 
-                ),),
-              ),
-               ListTile(
-               
-                title: Text("Payment Method", style: TextStyle(
-                  color: Colors.black, 
-                ),),
-              ),
-               ListTile(
-               
-                title: Text("E-Wallet", style: TextStyle(
-                  color: Colors.black, 
-                ),),
-              ), 
-                ExpansionTile(title: Text("Support"), 
-              children: [
-                ListTile(
-                  title: Text("Category 1"),
-                ),
-                  ListTile(
-                  title: Text("Category 1"),
-                )
-              ],
-              )
-              ,
-               ListTile(
-               
-                title: Text("Settings", style: TextStyle(
-                  color: Colors.black, 
-                ),),
-              ),
-              ListTile(
-               
-                title: Text("Logout", style: TextStyle(
-                  color: Colors.black, 
-                ),),
-              )
-            ],
+          
+               SizedBox(height: 10), 
+          Container(
+               width: 300,
+            child: Row(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                         
+                            child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                 
+                               
+                                child: Text("Cathy Ferguson", 
+                                style: TextStyle(fontSize: 14, ),),
+                                        ),
+                                          Container(
+                                  
+                             
+                                child: Text("Service Receiver", 
+                                style: TextStyle(fontSize: 14, ),),
+                                        ),
+                             Container(
+                                  
+                               
+                                child: Text("15 Jan 2023, 01:53PM", 
+                                style: TextStyle(fontSize: 14, ),),
+                                        ),
+                              ],
+                            ),
+                          ),
+ Container(
+                                  
+                               
+                                child: Text("148.47", 
+                                style: TextStyle(fontSize: 14, ),),
+                                        ),
+
+                        ],
+                      ),
           ),
-        ),
-      )
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
+
+
+// Row(
+//                 children: [
+//                   Container(
+//                     child: Column(
+//                       children: [
+//                         Container(
+//                           width:300, 
+                       
+//                         child: Text("Cathy Ferguson", 
+//                         style: TextStyle(fontSize: 14, ),),
+//                                 ),
+//                                   Container(
+//                           width:300, 
+                     
+//                         child: Text("Service Receiver", 
+//                         style: TextStyle(fontSize: 14, ),),
+//                                 ),
+//                      Container(
+//                           width:300, 
+                       
+//                         child: Text("15 Jan 2023, 01:53PM", 
+//                         style: TextStyle(fontSize: 14, ),),
+//                                 ),
+//                       ],
+//                     ),
+//                   ),
+//                 ],
+//               ),
