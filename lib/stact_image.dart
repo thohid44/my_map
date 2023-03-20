@@ -13,7 +13,25 @@ class _StackImageState extends State<StackImage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey,
-      appBar: AppBar(),
+      appBar: AppBar(
+        actions: [
+          PopupMenuButton(
+              offset: Offset(0, 100),
+            itemBuilder: (context) =>[
+            PopupMenuItem(child: Text("Record"), 
+            height: 40,
+            ),
+              PopupMenuItem(child: Text("View"), 
+            height: 40,
+            ), 
+              PopupMenuItem(child: Text("Delete"), 
+            height: 40,
+            )
+          ]
+            
+          ),
+        ],
+      ),
       body: Column(
         children: [
           Container(
