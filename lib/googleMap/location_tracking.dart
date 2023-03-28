@@ -154,18 +154,110 @@ class _LocationTrackingState extends State<LocationTracking> {
           )
         : SafeArea(
             child: Scaffold(
-              body: GoogleMap(
-                myLocationButtonEnabled: true,
-                compassEnabled: true,
-                markers: _marker,
-                polylines: _polylines,
-                mapType: MapType.normal,
-                initialCameraPosition: initialCameraPosition,
-                onMapCreated: (GoogleMapController controller) {
-                  _controller.complete(controller);
+              body: Stack(
+                children: [
+                  GoogleMap(
+                    myLocationButtonEnabled: true,
+                    compassEnabled: true,
+                    markers: _marker,
+                    polylines: _polylines,
+                    mapType: MapType.normal,
+                    initialCameraPosition: initialCameraPosition,
+                    onMapCreated: (GoogleMapController controller) {
+                      _controller.complete(controller);
 
-                  showLocationPins();
-                },
+                      showLocationPins();
+                    },
+                  ),
+                  Positioned(
+                    bottom: 70,
+                    left: 30, 
+                    right: 30,
+                    child: Container(
+                      alignment: Alignment.center,
+                     height: 400, 
+                     width: 500,
+                   
+                    decoration:const BoxDecoration(
+                      color: Colors.white
+                    ),
+                    child: ListView(
+                      children: [
+                         Card(
+                           child: ListTile(
+                                                 
+                            title: Text("Covid-19 Safety Checklist", style: TextStyle(color: Colors.black),),
+                            subtitle: Text("Please make sure you have taken the following safety measures", 
+                            style: TextStyle(fontSize:12),),
+                                                 ),
+                         ),
+                        ListTile(
+                          leading: Container(
+                            height: 40, 
+                            width: 40, 
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              shape: BoxShape.circle
+
+                            )
+                          ),
+                          title: Text("You are not sick", style: TextStyle(color: Colors.black),),
+                          subtitle: Text("Avoid any interaction if you are sick of have any symptom of Covid-19", 
+                          style: TextStyle(fontSize:12),),
+                        ),
+                         ListTile(
+                          leading: Container(
+                            height: 40, 
+                            width: 40, 
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              shape: BoxShape.circle
+
+                            )
+                          ),
+                          title: Text("Wear a mas", style: TextStyle(color: Colors.black),),
+                          subtitle: Text("Avoid any interaction if you are sick of have any symptom of Covid-19", 
+                          style: TextStyle(fontSize:12),),
+                        ),
+                         ListTile(
+                          leading: Container(
+                            height: 40, 
+                            width: 40, 
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              shape: BoxShape.circle
+
+                            )
+                          ),
+                          title: Text("Clean your hand", style: TextStyle(color: Colors.black),),
+                          subtitle: Text("Avoid any interaction if you are sick of have any symptom of Covid-19", 
+                          style: TextStyle(fontSize:12),),
+                        ),
+                         ListTile(
+                          leading: Container(
+                            height: 40, 
+                            width: 40, 
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              shape: BoxShape.circle
+
+                            )
+                          ),
+                          title: Text("keep distance", style: TextStyle(color: Colors.black),),
+                          subtitle: Text("Avoid any interaction if you are sick of have any symptom of Covid-19", 
+                          style: TextStyle(fontSize:12),),
+                        ), 
+                        Container(
+                          alignment: Alignment.center,
+                          margin: EdgeInsets.symmetric(vertical: 15),
+                          width: 340, 
+
+                          child: Text("ACKNOWLEDGE & PROCEED", style: TextStyle(color: Colors.purple),),
+                        )
+                      ],
+                    ),
+                  ))
+                ],
               ),
             ),
           );
