@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_map/stact_image.dart';
 
 import 'googleMap/location_tracking.dart';
+import 'pages/views/rating_john34.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       
         primarySwatch: Colors.blue,
       ),
-      home: LocationTracking(),
+      home: Rating34(),
     );
   }
 }

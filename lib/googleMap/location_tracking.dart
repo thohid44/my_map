@@ -177,13 +177,12 @@ class _LocationTrackingState extends State<LocationTracking> {
                       alignment: Alignment.center,
                      height: 400, 
                      width: 500,
-                   
                     decoration:const BoxDecoration(
                       color: Colors.white
                     ),
                     child: ListView(
                       children: [
-                         Card(
+                        const Card(
                            child: ListTile(
                                                  
                             title: Text("Covid-19 Safety Checklist", style: TextStyle(color: Colors.black),),
